@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جاري تحويلك إلى الموقع الرسمي | Siiir TV</title>
+<!-- Tailwind CSS CDN for styling -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Cairo', sans-serif;
+}
+</style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center p-4">
+<!-- Container Card -->
+<div class="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl text-center relative overflow-hidden">
+<!-- Decorative Glow Background -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Logo or Icon Placeholder -->
+<div class="w-20 h-20 bg-indigo-600/20 border border-indigo-500/30 rounded-2xl mx-auto flex items-center justify-center mb-6 shadow-inner">
+<svg class="w-10 h-10 text-indigo-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+</svg>
+</div>
+<!-- Heading -->
+<h1 class="text-2xl font-bold mb-2 tracking-tight">أهلاً بك في Siiir TV</h1>
+<p class="text-slate-400 text-sm mb-6">جاري نقلك تلقائياً إلى صفحة العرض المباشرة...</p>
+<!-- Progress Spinner / Timer -->
+<div class="flex flex-col items-center justify-center mb-8">
+<div class="w-12 h-12 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mb-3"></div>
+<span id="countdown" class="text-xs text-slate-500 font-medium">التحويل خلال ثوانٍ معدودة...</span>
+</div>
+<!-- Manual Redirect Button (Crucial for Meta Ad compliance & user control) -->
+<a id="redirect-btn" href="https://siiir-tv.vercel.app/" class="w-full block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/30 transition-all duration-200 transform active:scale-95 text-center">
+اضغط هنا إذا لم يتم تحويلك تلقائياً
+</a>
+<!-- Footer Note -->
+<p class="text-xs text-slate-600 mt-6">جميع الحقوق محفوظة © 2026</p>
+</div>
+<!-- JavaScript Redirect Logic -->
+<script>
+// Target Destination URL
+const targetUrl = "https://siiir-tv.vercel.app/";
+let secondsLeft = 2;
+const countdownEl = document.getElementById('countdown');
+// Update countdown text every second
+const timer = setInterval(() => {
+secondsLeft--;
+if (secondsLeft > 0) {
+countdownEl.textContent = التحويل خلال ثانية واحدة...;
+} else {
+clearInterval(timer);
+countdownEl.textContent = "جاري التحويل الآن...";
+}
+}, 1000);
+// Automatic redirect after 2 seconds
+setTimeout(() => {
+window.location.href = targetUrl;
+}, 2000);
+</script>
+</body>
+</html>
